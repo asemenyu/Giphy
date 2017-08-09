@@ -15,21 +15,21 @@ function displayWeek ()
 		method: 'GET'
 		})
 
-		.done(function(response) 
+		.done(function(response)
 		{
-	
+
 		console.log(response.data);
 		console.log(queryURL);
 
 
 	var results = response.data;
-		
-			for(var i=0; i <= 10; i++) 
+
+			for(var i=0; i <= 10; i++)
 			{
 				var dayDiv = $("<div>");
-			
+
 			var rate = $('<p>').text("Rating: " + results[i].rating);
-			
+
 			// for(var g=0; g <= 10; g++){
 		   	var imageTag=$("<img>");
 		 	imageTag.attr('src', results[i].images.original.url);
@@ -42,18 +42,18 @@ function displayWeek ()
 			$("#allImages").append(dayDiv);
 
 			}
-		
-			
-		
-		   	
+
+
+
+
 		});
 }
 
-		function raindeer () 
+		function raindeer ()
 		{
 			$("#btnTopic").empty();
 
-			for (var j=0; j < btnTopic.length; j++) 
+			for (var j=0; j < btnTopic.length; j++)
 			{
 			var topicBtn = $("<button>");
 			topicBtn.addClass("hotdog");
@@ -65,7 +65,7 @@ function displayWeek ()
 			}
 		}
 
-		$("#addbtn").on("click", function(event) 
+		$("#addbtn").on("click", function(event)
 		{
 			event.preventDefault();
 
@@ -76,9 +76,8 @@ function displayWeek ()
 			raindeer();
 		});
 
-		
+
 
 		$(document).on("click", ".hotdog", displayWeek);
 		displayWeek();
 		raindeer ();
- 
